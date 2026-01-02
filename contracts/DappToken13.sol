@@ -37,23 +37,36 @@ contract DappToken13 {
 
         balanceOf[msg.sender] -= _value;
         balanceOf[_to] += _value;
-
+        //transfer event
         Transfer(msg.sender, _to, _value);
         return true;
     }
 
     //approve
     function approve(address _sender, uint256 _value) public returns(bool success){
-        //allowance
+        //allowance 
         allowance[msg.sender][_sender] = _value;
 
-        //approve
+        //approval event
         Approval(msg.sender, _sender, _value);
         
         return true;
     }
 
     //transferFrom
+    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success){
+        require(_value <= balanceOf[_from]);
+        require(_value <= allowance[_from][msg.sender]);
 
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
+
+        allowance[_from][msg.sender] -= _value;
+        
+        //transfer event
+        Transfer(_from, _to, _value);
+
+        return true;
+    }
 
 }
