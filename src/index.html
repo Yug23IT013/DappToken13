@@ -17,13 +17,13 @@
             <div class="loader">
                 <p class="text-center">Loading...</p>
             </div>
-            <div class="text-center" id="content">
+            <div class="text-center" id="content" style="display: none;">
                 <p>
                     Introduction DappToken13
                     Token price is <span id="token-price"> </span> Ether. You currently have <span id="user-tokens"> </span>&nbsp;DappToken13
                 </p>
                 <br/>
-                <form role="form">
+                <form onsubmit="App.buyTokens(); return false;" role="form">
                     <div class="form-group">
                         <div class="input-group">
                             <input class="form-control input-lg" type="number" id="numberOfTokens" name="number" value="1" min="1" pattern="[0-9]"></input>
@@ -36,7 +36,7 @@
                 <div class="progress">
                     <div id="progress" class="progress-bar progress-bar-striped active" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <p><span class="token-sold"></span> / <span class="tokens-available"> token sold</span></p>
+                <p><span class="tokens-sold"></span> / <span class="tokens-available"></span> token sold</p>
                 <hr>
                 <p id="accountAddress"></p>
             </div>
