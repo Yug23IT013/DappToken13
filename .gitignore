@@ -1,2 +1,4 @@
-# Dependencies
+@"
 node_modules/
+.env
+"@ | Out-File -FilePath .gitignore -Encoding utf8

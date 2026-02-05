@@ -12,7 +12,8 @@
     "author": "Yug Buha",
     "license": "ISC",
     "devDependencies": {
+        "@truffle/hdwallet-provider": "^2.1.15",
+        "dotenv": "^17.2.3",
         "lite-server": "^2.3.0"
     }
-
 }
